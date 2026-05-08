@@ -54,4 +54,4 @@ The following 6 properties MUST match exactly across all 4 source DBs (AI Daily 
 - Output (options + colors — exactly two toggles: Visualize / Share)
 - Status (groups + options + colors)
 
-> ⚠️ Drift discovered during L1 audit must be fixed before declaring schema parity.
+> ✅ Course Digest shared vocabulary parity confirmed (L1 audit — 3 drift items found and fixed). Pre-existing drift in older DBs deferred to a separate System Audit (see §8 Q4).

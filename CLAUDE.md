@@ -46,7 +46,7 @@ The system operates in three layers:
 - Output (two toggles: Visualize / Share)
 - Status (groups, options, colors)
 
-**Note:** L1 audit (S5 check) found 3 drift items in Course Digest—pre-work for any schema changes must include a diff audit of all 4 source DBs.
+**Note:** L1 audit (S5 check) found and fixed 3 drift items in Course Digest. Pre-work for any schema changes must include a diff audit of all 4 source DBs.
 
 ## Directory Structure
 
@@ -63,7 +63,7 @@ The system operates in three layers:
 │   ├── 06-open-questions.md           # Q1–Q8 unresolved questions
 │   ├── 07-decision-log.md             # DL entries (decisions made + rationale)
 │   ├── 08-retro.md                    # Retrospective entries (what went well, blockers)
-│   ├── 09-next-actions.md             # Actionable next steps (e.g., fix shared vocab drift)
+│   ├── 09-next-actions.md             # Actionable next steps (L2 audit pending)
 │   └── 10-resources.md                # External links (Notion brief, other DBs, etc.)
 ├── schema/
 │   └── course-digest.md               # 19-property schema spec (shared + course-specific)
@@ -192,7 +192,6 @@ See `docs/01-problem-and-goal.md` for all 7 success metrics (S1–S7).
 
 **Blocked/Pending:**
 - L2 audit (outcome validation): ⏳ Pending—requires real course entry with URL
-- Shared vocabulary drift fix: ⚠️ 3 items found in S5 check (see `docs/09-next-actions.md`)
 
 See `docs/09-next-actions.md` for specific action items and priority order.
 
