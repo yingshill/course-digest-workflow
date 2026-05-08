@@ -24,6 +24,8 @@ This workflow plugs courses into a signal ecosystem so they produce:
 ```
 .
 ├── README.md                  ← you are here
+├── CLAUDE.md                  ← Claude Code project instructions
+├── AUTOMATION_SETUP.md        ← automation setup guide
 ├── docs/
 │   ├── 01-problem-and-goal.md
 │   ├── 02-architecture.md
@@ -39,8 +41,16 @@ This workflow plugs courses into a signal ecosystem so they produce:
 │   └── course-digest.md       ← DB schema (19 properties)
 ├── templates/
 │   └── course-notebook.md     ← modular template spec
-└── agents/
-    └── brain-agent.md         ← auto-fill + learning expert role
+├── agents/
+│   └── brain-agent.md         ← auto-fill + learning expert role
+└── automation/                ← Node.js CLI (Notion → Claude → Notion)
+    ├── src/
+    │   ├── index.js
+    │   ├── notion.js
+    │   ├── claude.js
+    │   └── markdown-to-notion.js
+    ├── package.json
+    └── README.md
 ```
 
 ## Architecture at a glance

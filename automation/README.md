@@ -45,7 +45,7 @@ The tool will:
 - Markdown converts to Notion toggle blocks
 - Results written back to Notion page
 
-**Cost:** ~$0.10 per course (single Claude API call)
+**Cost:** ~$0.06–0.15 per course (single Sonnet 4.6 API call, varies by module count)
 
 ## Environment Variables
 
@@ -65,13 +65,6 @@ index.js (CLI orchestration)
 
 ## Limitations
 
-- URL fetching may fail on login-gated platforms (fallback: user provides transcript)
-- PDF parsing is basic (text extraction only)
-- Notion toggle block nesting has limits (very deep nesting may not render)
-
-## Next Steps
-
-After testing with 1–2 real courses:
-- Move to scheduled execution (Claude Code `/schedule` or local cron)
-- Add error recovery and retry logic
-- Implement batch processing for multiple courses
+- URL fetching may fail on login-gated platforms (fallback: user provides transcript PDF)
+- PDF parsing is text extraction only — no layout or image support
+- Notion API limits each `children.append` call to 100 blocks; very long courses (20+ modules with full scaffolding) may need chunking

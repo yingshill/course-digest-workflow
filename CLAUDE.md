@@ -133,7 +133,7 @@ The `automation/` folder contains a Node.js CLI tool for the Notion → Claude �
 6. Markdown converts to Notion toggle blocks
 7. Results write back to Notion, course marked as processed
 
-**Cost:** ~$0.10 per course (single Claude API call)
+**Cost:** ~$0.06–0.15 per course (single Claude Sonnet 4.6 API call, varies by module count)
 
 See `AUTOMATION_SETUP.md` for detailed setup instructions.
 

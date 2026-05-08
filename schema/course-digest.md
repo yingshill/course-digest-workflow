@@ -41,7 +41,7 @@
 
 ## Views
 
-- **Quick Scan** — table view, default sort by Date desc, with Title, Platform, Status, Progress, Tier, Due Date.
+- **Quick Scan** — table view, default sort by Date desc, with Title, Platform, Difficulty, Status, Progress, Instructor.
 
 ## Shared-vocabulary contract
 

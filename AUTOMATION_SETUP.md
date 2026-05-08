@@ -16,7 +16,7 @@ CLI Tool (manual trigger)
     └─ Write results back to Notion
 ```
 
-**Cost:** ~$0.10 per course (single Claude API call, Haiku-based pricing)
+**Cost:** ~$0.06–0.15 per course (single Claude API call, Sonnet 4.6 pricing — varies by module count)
 
 **Trigger:** Manual (`npm start`) — human decides when to process
 
@@ -139,35 +139,14 @@ This shows:
 
 ## Cost Estimation
 
-Per course:
-- **Input tokens:** ~5,000 (metadata + transcript + context)
-- **Output tokens:** ~3,000 (module notes + scaffolding)
-- **Total cost:** ~$0.10 (Haiku pricing)
+Per course (Sonnet 4.6 — $3/M input, $15/M output):
+- **Input tokens:** ~5,000–8,000 (metadata + transcript/URL content + context)
+- **Output tokens:** ~3,000–8,000 (module notes + scaffolding, up to 8,096 max)
+- **Total cost:** ~$0.06–0.15 depending on module count
 
 Monthly estimate (10 courses):
-- API cost: ~$1.00
+- API cost: ~$0.60–1.50
 - Notion API: free (included in automation calls)
-- Claude Code: $20 (fixed subscription)
-
-## Next Steps
-
-After validating 2–3 real courses:
-
-1. **Automate scheduling:**
-   - Use Claude Code `/schedule` for periodic checks
-   - Or set up local cron to run `npm start` on interval
-
-2. **Batch processing:**
-   - Extend tool to process multiple courses in one run
-   - Useful if you have backlog
-
-3. **Error recovery:**
-   - Add retry logic for failed API calls
-   - Store partial results
-
-4. **Pipeline monitoring:**
-   - Track costs over time
-   - Monitor API usage
 
 ## File Structure
 
