@@ -1,0 +1,24 @@
+{
+  "name": "course-learning-automation",
+  "version": "1.0.0",
+  "description": "CLI tool for processing pending courses and generating learning materials with Claude API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "course-automation": "src/index.js"
+  },
+  "keywords": ["notion", "claude", "automation", "learning"],
+  "author": "Yingshi Liu",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.95.1",
+    "@notionhq/client": "^5.20.0",
+    "axios": "^1.16.0",
+    "dotenv": "^17.4.2",
+    "inquirer": "^13.4.2",
+    "pdf-parse": "^2.4.5"
+  }
+}

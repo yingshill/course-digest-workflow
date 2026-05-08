@@ -52,6 +52,8 @@ The system operates in three layers:
 
 ```
 ├── README.md                          # Project overview + architecture diagram
+├── CLAUDE.md                          # This file
+├── AUTOMATION_SETUP.md                # Setup guide for automation CLI
 ├── docs/
 │   ├── 01-problem-and-goal.md         # Problem statement, goal, success metrics (S1–S7)
 │   ├── 02-architecture.md             # Storage/agent/automation layer design + build order
@@ -67,8 +69,17 @@ The system operates in three layers:
 │   └── course-digest.md               # 19-property schema spec (shared + course-specific)
 ├── templates/
 │   └── course-notebook.md             # Modular template spec (composable sections)
-└── agents/
-    └── brain-agent.md                 # Agent extension spec (scrape logic, learning scaffolding)
+├── agents/
+│   └── brain-agent.md                 # Agent extension spec (scrape logic, learning scaffolding)
+└── automation/                        # Node.js CLI tool for Notion → Claude → Notion pipeline
+    ├── src/
+    │   ├── index.js                   # Main CLI (orchestration)
+    │   ├── notion.js                  # Notion API client
+    │   ├── claude.js                  # Claude API + Brain Agent instructions
+    │   └── markdown-to-notion.js      # Markdown to Notion blocks converter
+    ├── .env.example                   # Environment template
+    ├── package.json                   # Dependencies + npm start script
+    └── README.md                      # Quick reference
 ```
 
 ## Key Concepts
@@ -104,6 +115,43 @@ Three initial scaffolding types (L2 validates which add value):
 3. **Application prompts** — 1–2 per module, push from passive understanding to active use
 
 **Deferred:** Spaced repetition cues until L2 outcome validation.
+
+## Automation Setup
+
+The `automation/` folder contains a Node.js CLI tool for the Notion → Claude → Notion pipeline.
+
+**Purpose:** Process pending courses from Notion, generate comprehensive module notes + learning scaffolding using Claude API, and write results back to Notion.
+
+**Trigger:** Manual (`npm start`) — human decides when to process. No auto-polling; cost-efficient.
+
+**Workflow:**
+1. User adds course to Notion with URL
+2. Human runs `npm start` in `automation/` folder
+3. CLI displays pending courses; user selects one
+4. User optionally uploads transcript PDF or context files
+5. CLI calls Claude API once (Markdown output)
+6. Markdown converts to Notion toggle blocks
+7. Results write back to Notion, course marked as processed
+
+**Cost:** ~$0.10 per course (single Claude API call)
+
+See `AUTOMATION_SETUP.md` for detailed setup instructions.
+
+### Running the Automation
+
+```bash
+cd automation
+npm start
+```
+
+Then follow the prompts. That's it.
+
+### Code Structure
+
+- `index.js` — Orchestration (fetch, prompt user, call API, write results)
+- `notion.js` — Notion API client (query pending, update page)
+- `claude.js` — Claude API call + Brain Agent instructions
+- `markdown-to-notion.js` — Convert Markdown to Notion toggle blocks
 
 ## Common Work Patterns
 
@@ -154,6 +202,19 @@ Work ownership is defined in `docs/03-delegation.md`:
 - **AI-led:** Schema design, property addition, template URL callouts, relations, audit execution, Workspace Database Design updates
 - **Collaborative:** Template design (AI drafts, Yingshi refines), agent logic blocks (AI drafts, Yingshi encodes into agent UI)
 - **Human-led:** Agent instruction updates (must be manual), L2 outcome validation (requires testing real courses)
+
+## Architectural Decision-Making Principles
+
+**Cost-efficiency is non-negotiable.** When evaluating architectural options:
+
+1. **Always provide cost analysis** — Compare API calls, tokens, and infrastructure costs before recommending
+2. **Select the lower-cost option** — Unless complexity introduces maintenance burden that outweighs savings
+3. **Prefer single API calls over multiple round-trips** — One Claude API call with processed input beats 3 calls with raw input
+4. **Offload "dumb work" to Node** — Scraping, parsing, file handling is free; only intelligence goes to Claude API
+5. **Consider long-term scaling** — Cost per unit of work matters more than absolute cost
+6. **Minimize automation overhead** — Manual triggers > auto-polling (only pay for work when human intends it)
+
+Apply this in plan mode: Always include cost comparison and break-even analysis before recommending architecture.
 
 ## External Context
 
