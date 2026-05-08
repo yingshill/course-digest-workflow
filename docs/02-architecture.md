@@ -26,8 +26,16 @@
 
 ## Automation layer
 
-- `page.created` trigger → auto-fill (same as Podcast Digest)
+- `page.created` trigger → Brain Agent auto-fill (same as Podcast Digest)
 - No recurring trigger — courses are manually added
+
+**Manual CLI (`automation/`)** — Node.js tool for Notion → Claude → Notion pipeline:
+- Human runs `npm start`; tool fetches pending courses (`Transcript Ready = false`)
+- User selects a course, optionally uploads transcript PDF or context file
+- Single Claude API call (Sonnet 4.6, 8096 max tokens) generates module notes + scaffolding in Markdown
+- Markdown converts to Notion toggle blocks (one per module, heading_3 for sections — flat structure avoids multi-call nesting constraint)
+- Results written back to Notion; `Transcript Ready` set to true
+- Cost: ~$0.06–0.15 per course depending on module count
 
 ## Shared vocabulary
 

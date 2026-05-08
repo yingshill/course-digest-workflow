@@ -23,4 +23,6 @@
 | Revised §5 Delegation + §6 Constraints | AI | ✅ Done |
 | S6/S7 metrics added to §2 | AI | ✅ Done |
 | L1 audit (process compliance) | AI | ✅ Pass (S1–S5) |
+| Automation CLI built (`automation/` — Node.js, Notion→Claude→Notion) | AI | ✅ Done |
+| Automation CLI refactored (Sonnet 4.6, flat Notion block converter, inquirer v8) | AI | ✅ Done |
 | L2 audit (outcome validation) | Human | ⏳ Pending — needs real course entry |
