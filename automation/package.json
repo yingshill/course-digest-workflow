@@ -10,7 +10,12 @@
   "bin": {
     "course-automation": "src/index.js"
   },
-  "keywords": ["notion", "claude", "automation", "learning"],
+  "keywords": [
+    "notion",
+    "claude",
+    "automation",
+    "learning"
+  ],
   "author": "Yingshi Liu",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +23,7 @@
     "@notionhq/client": "^5.20.0",
     "axios": "^1.16.0",
     "dotenv": "^17.4.2",
-    "inquirer": "^13.4.2",
+    "inquirer": "^8.2.6",
     "pdf-parse": "^2.4.5"
   }
 }
