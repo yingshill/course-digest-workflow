@@ -2,31 +2,31 @@
   <rect width="1600" height="900" fill="#F6F7FB"/>
   <rect x="88" y="72" width="1424" height="756" rx="24" fill="#FFFFFF" stroke="#D8DEE9" stroke-width="2"/>
   <rect x="128" y="112" width="1344" height="202" rx="18" fill="#111827"/>
-  <text x="168" y="164" fill="#9CA3AF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2">CASE STUDY / COURSE DIGEST WORKFLOW</text>
-  <text x="168" y="232" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="800">Courses need operating systems</text>
-  <text x="168" y="284" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="27">The project turns scattered course material into structured notes, questions, and next actions.</text>
+  <text x="168" y="164" fill="#9CA3AF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2">CASE STUDY / COURSE DIGEST</text>
+  <text x="168" y="232" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">Courses need operating systems</text>
+  <text x="168" y="284" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">A repeatable learning workflow for notes, questions, and next actions.</text>
   <rect x="128" y="370" width="380" height="198" rx="18" fill="#FFFFFF" stroke="#D8DEE9" stroke-width="2"/>
-  <text x="168" y="428" fill="#B91C1C" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800">PROBLEM</text>
-  <text x="168" y="480" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800">Passive course capture</text>
-  <text x="168" y="526" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">Videos and transcripts pile up without</text>
-  <text x="168" y="560" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">a repeatable learning workflow.</text>
+  <text x="168" y="428" fill="#B91C1C" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="800">PROBLEM</text>
+  <text x="168" y="478" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="800">Passive capture</text>
+  <text x="168" y="522" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="22">Videos, links, and notes</text>
+  <text x="168" y="554" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="22">pile up without review.</text>
   <rect x="610" y="370" width="380" height="198" rx="18" fill="#FFFFFF" stroke="#D8DEE9" stroke-width="2"/>
-  <text x="650" y="428" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800">SYSTEM</text>
-  <text x="650" y="480" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800">Claude-backed CLI</text>
-  <text x="650" y="526" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">The CLI generates module notes,</text>
-  <text x="650" y="560" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">checks, scaffolds, and Notion blocks.</text>
+  <text x="650" y="428" fill="#2563EB" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="800">SYSTEM</text>
+  <text x="650" y="478" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="800">Claude CLI</text>
+  <text x="650" y="522" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="22">Generates module notes,</text>
+  <text x="650" y="554" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="22">checks, and scaffolds.</text>
   <rect x="1092" y="370" width="380" height="198" rx="18" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="2"/>
-  <text x="1132" y="428" fill="#15803D" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800">OUTCOME</text>
-  <text x="1132" y="480" fill="#14532D" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800">Reusable study base</text>
-  <text x="1132" y="526" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="24">Each course becomes structured,</text>
-  <text x="1132" y="560" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="24">reviewable, and easier to extend.</text>
+  <text x="1132" y="428" fill="#15803D" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="800">OUTCOME</text>
+  <text x="1132" y="478" fill="#14532D" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="800">Study base</text>
+  <text x="1132" y="522" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="22">Each course becomes</text>
+  <text x="1132" y="554" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="22">structured and reusable.</text>
   <rect x="128" y="636" width="424" height="122" rx="18" fill="#F8FAFC" stroke="#D8DEE9" stroke-width="2"/>
-  <text x="168" y="696" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Schema first</text>
-  <text x="168" y="734" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="23">Course data has a stable home.</text>
+  <text x="168" y="696" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Schema first</text>
+  <text x="168" y="734" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="21">Course data has a stable home.</text>
   <rect x="588" y="636" width="424" height="122" rx="18" fill="#F8FAFC" stroke="#D8DEE9" stroke-width="2"/>
-  <text x="628" y="696" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Automation ready</text>
-  <text x="628" y="734" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="23">CLI can run on URL or transcript input.</text>
+  <text x="628" y="696" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Automation ready</text>
+  <text x="628" y="734" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="21">Works with URLs or transcripts.</text>
   <rect x="1048" y="636" width="424" height="122" rx="18" fill="#ECFDF5" stroke="#BBF7D0" stroke-width="2"/>
-  <text x="1088" y="696" fill="#14532D" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800">Learning loops</text>
-  <text x="1088" y="734" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="23">Prompts turn notes into practice.</text>
+  <text x="1088" y="696" fill="#14532D" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800">Learning loops</text>
+  <text x="1088" y="734" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="21">Prompts turn notes into practice.</text>
 </svg>
