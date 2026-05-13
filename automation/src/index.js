@@ -147,7 +147,7 @@ async function main() {
       extraContent
     );
 
-    // Convert to Notion blocks
+    // Convert Markdown to flat Notion blocks
     console.log('📦 Converting to Notion blocks...');
     const blocks = markdownToNotionBlocks(markdown);
 
@@ -156,8 +156,7 @@ async function main() {
     await updateCoursePage(selectedCourse.id, {
       blocks,
       properties: {
-        'Transcript Ready': { checkbox: true },
-        Status: { status: { name: 'Processing' } }
+        Status: { status: { name: 'Done' } }
       }
     });
 

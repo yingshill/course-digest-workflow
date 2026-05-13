@@ -51,7 +51,6 @@ On page creation, Brain Agent:
 2. Scrapes the course page (web access)
 3. Extracts: title, description, syllabus / module list, instructor, difficulty
 4. Auto-fills properties + generates module notes with rationales
-5. Sets `Transcript Ready` if scrape is sufficient
 
 ### Fallback (login-gated platforms)
 

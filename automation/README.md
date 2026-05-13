@@ -27,23 +27,23 @@ npm start
 ```
 
 The tool will:
-1. Fetch all pending courses (where `Transcript Ready` = false)
+1. Fetch all non-Done courses from the database
 2. Display them and ask you to pick one
 3. Ask if you have a transcript PDF or extra context
 4. Call Claude API to generate module notes + learning scaffolding
-5. Write results back to Notion
-6. Mark the course as processed
+5. Write results back to Notion as flat blocks
+6. Set Status to Done
 
 ## Workflow
 
 **Trigger:** Manual (human runs `npm start`)
 
 **Process:**
-- User picks a pending course
+- User picks a course from the list
 - Optionally uploads transcript PDF or context files
 - AI processes with Claude API (Markdown output)
-- Markdown converts to Notion toggle blocks
-- Results written back to Notion page
+- Markdown converts to flat Notion blocks (headings + bullets, no toggles)
+- Results written back to Notion page; Status set to Done
 
 **Cost:** ~$0.06–0.15 per course (single Sonnet 4.6 API call, varies by module count)
 

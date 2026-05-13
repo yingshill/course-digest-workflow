@@ -27,7 +27,6 @@ IF: URL property is set
        - Concept connections (across modules + across Topic Hub)
        - Comprehension Qs (3–5)
        - Application prompts (1–2)
-    7. Set Transcript Ready = true IF scrape produced ≥ 1 module worth of structured content.
   ELSE:
     Fill metadata only. Insert callout: "Syllabus incomplete — paste full outline for deeper module notes."
 ELSE (URL not set):

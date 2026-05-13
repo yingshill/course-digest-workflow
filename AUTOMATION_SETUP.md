@@ -27,7 +27,6 @@ CLI Tool (manual trigger)
    - Course Digest database with these properties:
      - `Title` (text)
      - `URL` (URL)
-     - `Transcript Ready` (checkbox) — initially false
      - `Platform` (select)
      - `Instructor` (text)
      - `Modules` (number)
@@ -79,22 +78,21 @@ npm start
 ```
 
 **Workflow:**
-1. Tool fetches pending courses (where `Transcript Ready` = false)
+1. Tool fetches all non-Done courses from the database
 2. You select which course to process
 3. Tool asks:
    - "Do you have transcript PDF?" → optionally upload PDF
    - "Do you have extra context?" → optionally upload text file
 4. Tool fetches the course URL (if available)
 5. Tool calls Claude API to generate module notes + scaffolding
-6. Results write back to Notion as toggle blocks
-7. Course status updates to "Processing"
+6. Results write back to Notion as flat blocks (headings + bullets)
+7. Status set to Done
 
 ## First Test
 
 **Prepare:**
 1. Add 1 course to Notion with URL set
-2. Set `Transcript Ready = false`
-3. Set `Status = "Pending"`
+2. Set `Status` to anything other than Done (e.g. "Not started")
 
 **Run:**
 ```bash
@@ -102,9 +100,8 @@ npm start
 ```
 
 **Verify:**
-- Course notes appear in the Notion page
-- `Transcript Ready` flips to true
-- Content is organized in toggle blocks (one per module)
+- Course notes appear in the Notion page as flat headings + bullets
+- Status flips to Done
 
 ## Debug
 

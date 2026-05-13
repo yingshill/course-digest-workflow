@@ -9,7 +9,6 @@
   - `Instructor` — Text
   - `Modules` — Number (total module count)
   - `Progress` — Number (modules completed)
-  - `Transcript Ready` — Checkbox (auto-set by agent when enough content scraped; or manually set after pasting syllabus)
   - `Difficulty` — Select (Beginner / Intermediate / Advanced) — **course-only**
 - **Templates:** Single modular template (📖 Course Notebook) with composable sections — "Add Module" pattern inserts toggle sections on demand. Self-scaling: works for 3-module tutorials and 30-module courses without a separate template.
 
@@ -19,7 +18,7 @@
 
 - Add 📖 Course Digest to read/write access
 - Add `User Entry Auto-Fill` trigger on `page.created`
-- **URL-first workflow:** On page creation, scrape the course URL via web access → extract title, description, syllabus/module list, instructor, difficulty. Auto-fill all properties + generate module notes with rationales. Set `Transcript Ready` automatically if enough content scraped.
+- **URL-first workflow:** On page creation, scrape the course URL via web access → extract title, description, syllabus/module list, instructor, difficulty. Auto-fill all properties + generate module notes with rationales.
 - **Fallback:** If URL scrape is thin (login-gated platform), fill what's available and flag in page body: *"Syllabus incomplete — paste full outline for deeper module notes."* Human pastes outline → re-triggers full auto-fill.
 - Topic Hub sync: same rules as other source DBs
 - **Learning expert role:** Beyond auto-fill, provide learning scaffolding — concept connections across modules, comprehension questions, application prompts, spaced repetition cues. Connects to Creative Learning & Visualization Pipeline.
@@ -30,11 +29,11 @@
 - No recurring trigger — courses are manually added
 
 **Manual CLI (`automation/`)** — Node.js tool for Notion → Claude → Notion pipeline:
-- Human runs `npm start`; tool fetches pending courses (`Transcript Ready = false`)
+- Human runs `npm start`; tool fetches non-Done courses from the database
 - User selects a course, optionally uploads transcript PDF or context file
 - Single Claude API call (Sonnet 4.6, 8096 max tokens) generates module notes + scaffolding in Markdown
-- Markdown converts to Notion toggle blocks (one per module, heading_3 for sections — flat structure avoids multi-call nesting constraint)
-- Results written back to Notion; `Transcript Ready` set to true
+- Markdown converts to flat Notion blocks (heading_2 per module, heading_3 for sections, bullets/paragraphs flat)
+- Results written back to Notion; Status set to Done
 - Cost: ~$0.06–0.15 per course depending on module count
 
 ## Shared vocabulary

@@ -8,8 +8,8 @@ async function getPendingCourses() {
     const response = await notion.databases.query({
       database_id: databaseId,
       filter: {
-        property: 'Transcript Ready',
-        checkbox: { equals: false }
+        property: 'Status',
+        status: { does_not_equal: 'Done' }
       },
       sorts: [{ property: 'Date', direction: 'descending' }]
     });

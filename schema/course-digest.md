@@ -2,7 +2,7 @@
 
 **Type:** Source database #4 in AI Command Center.
 **Pattern:** Pattern 1 (shared vocabulary + DB-specific properties).
-**Total properties:** 19 (13 shared + 6 course-specific).
+**Total properties:** 18 (13 shared + 5 course-specific).
 
 ## Shared properties (identical across all 4 source DBs)
 
@@ -30,8 +30,7 @@
 | 15 | Instructor | Text | Free-form |
 | 16 | Modules | Number | Total module count |
 | 17 | Progress | Number | Modules completed |
-| 18 | Transcript Ready | Checkbox | Auto-set by Brain Agent when scrape sufficient; manual fallback after pasting syllabus |
-| 19 | Difficulty | Select | Beginner / Intermediate / Advanced |
+| 18 | Difficulty | Select | Beginner / Intermediate / Advanced |
 
 ## Relations
 

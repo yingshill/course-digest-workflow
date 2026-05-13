@@ -22,7 +22,7 @@ The system operates in three layers:
 
 ### Storage Layer
 - **📖 Course Digest** — 4th source database in AI Command Center, follows **Pattern 1** (shared vocabulary + DB-specific properties)
-- **19 properties:** 13 shared (identical across all 4 source DBs: Daily Hits, GitHub Trending, Podcast Digest, Course Digest) + 6 course-specific (Platform, Instructor, Modules, Progress, Transcript Ready, Difficulty)
+- **18 properties:** 13 shared (identical across all 4 source DBs: Daily Hits, GitHub Trending, Podcast Digest, Course Digest) + 5 course-specific (Platform, Instructor, Modules, Progress, Difficulty)
 - **Single modular template** (📖 Course Notebook) with composable "Add Module" sections—works for 3-module tutorials and 30-module courses
 
 ### Agent Layer
@@ -103,8 +103,7 @@ On page creation with a URL:
 2. **Extract** title, description, syllabus/modules, instructor, difficulty
 3. **Auto-fill** matching schema properties
 4. **Generate** module notes (summary, key concepts, rationale per module)
-5. **Set** `Transcript Ready = true` if scrape produced ≥1 module worth of content
-6. **Fallback:** If insufficient content (login-gated platforms), fill metadata + insert callout to paste syllabus manually
+5. **Fallback:** If insufficient content (login-gated platforms), fill metadata + insert callout to paste syllabus manually
 
 **Why:** Minimizes manual entry (URL provides most data) while gracefully handling access restrictions.
 
@@ -130,8 +129,8 @@ The `automation/` folder contains a Node.js CLI tool for the Notion → Claude �
 3. CLI displays pending courses; user selects one
 4. User optionally uploads transcript PDF or context files
 5. CLI calls Claude API once (Markdown output)
-6. Markdown converts to Notion toggle blocks
-7. Results write back to Notion, course marked as processed
+6. Markdown converts to flat Notion blocks (headings + bullets, no toggles)
+7. Results write back to Notion; Status set to Done
 
 **Cost:** ~$0.06–0.15 per course (single Claude Sonnet 4.6 API call, varies by module count)
 
@@ -151,7 +150,7 @@ Then follow the prompts. That's it.
 - `index.js` — Orchestration (fetch, prompt user, call API, write results)
 - `notion.js` — Notion API client (query pending, update page)
 - `claude.js` — Claude API call + Brain Agent instructions
-- `markdown-to-notion.js` — Convert Markdown to Notion toggle blocks
+- `markdown-to-notion.js` — Convert Markdown to flat Notion blocks
 
 ## Common Work Patterns
 
