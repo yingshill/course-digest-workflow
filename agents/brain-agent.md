@@ -26,7 +26,7 @@ IF: URL property is set
     6. Generate learning expert scaffolding (per module):
        - Concept connections (across modules + across Topic Hub)
        - Comprehension Qs (3–5)
-       - Application prompts (1–2)
+       - Application prompts (1–2) — tailor toward Goal property if set
   ELSE:
     Fill metadata only. Insert callout: "Syllabus incomplete — paste full outline for deeper module notes."
 ELSE (URL not set):

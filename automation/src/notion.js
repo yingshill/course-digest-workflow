@@ -20,7 +20,8 @@ async function getPendingCourses() {
       url: page.properties.URL.url || null,
       platform: page.properties.Platform.select?.name || 'Unknown',
       instructor: page.properties.Instructor.rich_text[0]?.plain_text || null,
-      modules: page.properties.Modules.number || 0
+      modules: page.properties.Modules.number || 0,
+      goal: page.properties.Goal?.rich_text[0]?.plain_text || null
     }));
   } catch (error) {
     console.error('Error fetching pending courses:', error);

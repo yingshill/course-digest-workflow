@@ -2,6 +2,12 @@
 
 - [ ] 🔍 Pending L2 audit: S4 (Brain Agent auto-fill), S6 (URL scrape across 3 platform types), S7 (learning expert scaffolding validation), Topic Hub sync, reflection workflow usability
 
+## Backlog — product design improvements
+
+- [ ] **Re-process path** — a "Revisit" status that re-queues a Done course; CLI appends new notes below existing rather than overwriting
+- [ ] **Project escalation** — relation field or Action option to connect an application prompt directly to a Projects DB entry
+- [ ] **Add-from-CLI** — second CLI mode: human adds course entry (URL + metadata) directly from `npm start` without context-switching to Notion
+
 ## Showcase artifacts (proposed)
 
 - [ ] 📸 Architecture diagram — clean exportable PNG/SVG (base asset for all channels)

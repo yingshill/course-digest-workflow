@@ -22,7 +22,7 @@ The system operates in three layers:
 
 ### Storage Layer
 - **📖 Course Digest** — 4th source database in AI Command Center, follows **Pattern 1** (shared vocabulary + DB-specific properties)
-- **18 properties:** 13 shared (identical across all 4 source DBs: Daily Hits, GitHub Trending, Podcast Digest, Course Digest) + 5 course-specific (Platform, Instructor, Modules, Progress, Difficulty)
+- **19 properties:** 13 shared (identical across all 4 source DBs: Daily Hits, GitHub Trending, Podcast Digest, Course Digest) + 6 course-specific (Platform, Instructor, Modules, Progress, Difficulty, Goal)
 - **Single modular template** (📖 Course Notebook) with composable "Add Module" sections—works for 3-module tutorials and 30-module courses
 
 ### Agent Layer

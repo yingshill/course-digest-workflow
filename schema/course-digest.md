@@ -2,7 +2,7 @@
 
 **Type:** Source database #4 in AI Command Center.
 **Pattern:** Pattern 1 (shared vocabulary + DB-specific properties).
-**Total properties:** 18 (13 shared + 5 course-specific).
+**Total properties:** 19 (13 shared + 6 course-specific).
 
 ## Shared properties (identical across all 4 source DBs)
 
@@ -29,8 +29,9 @@
 | 14 | Platform | Select | Coursera, Udemy, YouTube, edX, Stanford Online, MIT OCW, Fast.ai, Other |
 | 15 | Instructor | Text | Free-form |
 | 16 | Modules | Number | Total module count |
-| 17 | Progress | Number | Modules completed |
+| 17 | Progress | Number | Modules *processed* (reflected on) — not modules watched |
 | 18 | Difficulty | Select | Beginner / Intermediate / Advanced |
+| 19 | Goal | Text | Why this course was added — what skill or outcome is expected. Set by human at entry; reviewed at course-level reflection. |
 
 ## Relations
 

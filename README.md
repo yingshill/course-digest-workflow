@@ -1,23 +1,89 @@
 # 📖 Course Learning Workflow
 
-A structured workflow for transforming passive course consumption into reflective, ecosystem-integrated learning. Built as the **4th source database** in the [AI Command Center](#) signal ecosystem, alongside AI Daily Hits, GitHub Daily Trending, and Podcast & Video Digest.
+> **Udemy knows you finished Module 4. It doesn't know you didn't understand it — and it has no way to connect it to anything you're building.**
 
-> **Status:** Phase 1 + 2 complete · Auditing (L2 pending)
-> **Stage:** Beta · **Deploy Status:** Live
-> **Parent project:** Creative Learning & Visualization Pipeline
+A structured pipeline for turning course consumption into processed, workspace-integrated learning. Built as the **4th source database** in the AI Command Center signal ecosystem.
+
+> **Status:** Phase 1 + 2 complete · L2 outcome validation pending
 
 ---
 
-## Why this exists
+## The gap this fills
 
-Online courses are **multi-module, sequential, and skill-building** — yet without a system, they get treated the same as one-off content (watch → forget). Courses become bookmarks, not capabilities.
+Online course platforms are good at one thing: tracking whether you watched.
 
-This workflow plugs courses into a signal ecosystem so they produce:
+| | Udemy | Datacamp | Coursera | This system |
+|---|---|---|---|---|
+| Completion tracking | ✅ | ✅ | ✅ | ✅ |
+| Built-in quizzes | ❌ | ✅ | ✅ | via scaffolding |
+| Cross-course synthesis | ❌ | ❌ | ❌ | ✅ Topic Hub |
+| Workspace integration | ❌ | ❌ | ❌ | ✅ Projects + signals |
+| Forced reflection | ❌ | ❌ | ❌ | ✅ per module |
+| Learning-to-action routing | ❌ | ❌ | ❌ | ✅ → Projects DB |
+| Your notes stay yours | ❌ | ❌ | ❌ | ✅ Notion |
 
-1. **Module-by-module progress tracking** — not just done/not done
-2. **Forced reflection at each module** — adapted from the Podcast Notebook pattern for cumulative learning
-3. **Ecosystem integration** — course insights route to a Topic Hub, feed into Projects, and trigger a `🎨 Visualize → 📣 Project` publishing pipeline
-4. **Agent-assisted processing** — auto-fill from URLs/syllabi, concept maps, comprehension Qs, application prompts
+**What platforms can't do:**
+- Connect Module 4 of your ML course to the article you read last week on the same topic
+- Route "I should build something with this" into an actual project
+- Surface that two courses you took cover overlapping concepts
+- Ask you whether you actually understood it, not just finished it
+
+This system does all four. Courses become the same kind of signal as articles, podcasts, and GitHub repos — processed, tagged, related, and routed.
+
+---
+
+## How it works
+
+```
+Human adds course to Notion (URL + metadata)
+        ↓
+Brain Agent fires on page.created
+        ↓
+Scrapes URL → auto-fills properties + generates module notes
+        ↓
+Human processes each module:
+  reads AI notes → works through comprehension Qs → writes reflection
+        ↓
+Human runs CLI (npm start) for deeper processing:
+  uploads transcript/syllabus → single Claude API call
+  → flat notes written back to Notion
+        ↓
+Course insight routes to:
+  → Topic Hub (Category + Tags)
+  → Projects DB (via relation)
+  → Output pipeline (Visualize / Share)
+```
+
+**Cost:** ~$0.10/course (single Claude Sonnet 4.6 API call)
+
+---
+
+## Architecture
+
+Three layers:
+
+**Storage** — 📖 Course Digest, the 4th source DB in AI Command Center. 19 properties: 13 shared with all other source DBs (enabling Topic Hub aggregation) + 6 course-specific (Platform, Instructor, Modules, Progress, Difficulty, Goal).
+
+**Agent** — Brain Agent extended for Course Digest. On `page.created`: scrapes URL, auto-fills properties, generates per-module notes + learning scaffolding (concept connections, comprehension questions, application prompts). Connects entries to Topic Hub by Category + Tags.
+
+**Automation** — Node.js CLI (`npm start`). Human-triggered. Fetches unprocessed courses, accepts transcript PDF or context file, makes one Claude API call, writes flat blocks back to Notion, sets Status to Done.
+
+```mermaid
+graph TD
+    A["🧠 AI Daily Hits"] -->|relation| D["🗺️ Topic Hub"]
+    B["📈 GitHub Daily Trending"] -->|relation| D
+    C["🎙️ Podcast & Video Digest"] -->|relation| D
+    NEW["📖 Course Digest"] -->|relation| D
+    A -->|relation| P["📁 Project"]
+    B -->|relation| P
+    C -->|relation| P
+    NEW -->|relation| P
+    NEW -.->|"page.created → auto-fill"| BA["🤖 Brain Agent"]
+    D -->|groups signals by topic| E["🏛️ AI Command Center"]
+    style NEW fill:#cffafe,color:#164e63,stroke:#164e63
+```
+
+---
 
 ## What's in this repo
 
@@ -53,28 +119,9 @@ This workflow plugs courses into a signal ecosystem so they produce:
     └── README.md
 ```
 
-## Architecture at a glance
+---
 
-```mermaid
-graph TD
-    A["🧠 AI Daily Hits"] -->|relation| D["🗺️ Topic Hub"]
-    B["📈 GitHub Daily Trending"] -->|relation| D
-    C["🎙️ Podcast & Video Digest"] -->|relation| D
-    NEW["📖 Course Digest"] -->|relation| D
-    A -->|relation| P["📁 Project"]
-    B -->|relation| P
-    C -->|relation| P
-    NEW -->|relation| P
-    NEW -.->|"page.created → auto-fill"| BA["🤖 Brain Agent"]
-    D -->|groups signals by topic| E["🏛️ AI Command Center"]
-    style NEW fill:#cffafe,color:#164e63,stroke:#164e63
-```
-
-## Build-value call
-
-> ✅ **Build.** Off-the-shelf course platforms track progress but don't integrate with the workspace signal ecosystem. The Podcast & Video Digest is a proven pattern — adapting it for structured course content adds unique value: module-level progress, structured reflection, full ecosystem integration (Topic Hub, shared vocabulary, two-toggle output flow, agent auto-fill).
-
-## Status snapshot
+## Status
 
 | Phase | Status |
 |---|---|
@@ -83,11 +130,7 @@ graph TD
 | L1 audit (process compliance) | ✅ Pass (S1–S5) |
 | L2 audit (outcome validation) | ⏳ Pending — needs real course entry |
 
-See [`docs/05-roadmap.md`](docs/05-roadmap.md) for the full roadmap and [`docs/08-retro.md`](docs/08-retro.md) for retro entries.
-
-## Origin
-
-This repo was migrated from a Notion working brief. The structure preserves the original §1–§12 brief sections as discrete docs so the build history, decision log, and retro entries remain auditable.
+---
 
 ## License
 

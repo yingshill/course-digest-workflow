@@ -8,8 +8,9 @@
   - `Platform` — Select (Coursera, Udemy, YouTube, edX, Stanford Online, MIT OCW, Fast.ai, Other)
   - `Instructor` — Text
   - `Modules` — Number (total module count)
-  - `Progress` — Number (modules completed)
+  - `Progress` — Number (modules *processed* — reflected on, not just watched)
   - `Difficulty` — Select (Beginner / Intermediate / Advanced) — **course-only**
+  - `Goal` — Text (why this course was added; what skill or outcome is expected)
 - **Templates:** Single modular template (📖 Course Notebook) with composable sections — "Add Module" pattern inserts toggle sections on demand. Self-scaling: works for 3-module tutorials and 30-module courses without a separate template.
 
 ## Agent layer

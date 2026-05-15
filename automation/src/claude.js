@@ -49,6 +49,7 @@ Links to related topics or prior modules.
 - Tailor difficulty to course level
 - Create questions that check understanding without spoiling reflection
 - Application prompts should push from passive understanding to active use
+- If the learner's goal is provided, tailor application prompts and comprehension questions toward that goal
 - If content is thin (login-gated or minimal URL), generate reasonable scaffolding from title/platform/instructor context and flag: "INCOMPLETE_SYLLABUS"`;
 
 async function processCourseMaterial(metadata, transcript = '', extraContext = '') {
@@ -62,6 +63,7 @@ Platform: ${metadata.platform}
 Instructor: ${metadata.instructor || 'Not provided'}
 Total Modules: ${modulesLabel}
 URL: ${metadata.url}
+${metadata.goal ? `Learner's Goal: ${metadata.goal}` : ''}
 
 ${transcript ? `**Course Transcript/Syllabus:**\n${transcript}\n\n` : ''}
 ${extraContext ? `**Extra Context from User:**\n${extraContext}\n\n` : ''}

@@ -50,7 +50,9 @@ async function main() {
     ]);
 
     const selectedCourse = courses[selectedIndex];
-    console.log(`\n✅ Selected: ${selectedCourse.title}\n`);
+    console.log(`\n✅ Selected: ${selectedCourse.title}`);
+    if (selectedCourse.goal) console.log(`🎯 Goal: ${selectedCourse.goal}`);
+    console.log();
 
     // Collect context
     const { hasTranscript, hasExtra } = await inquirer.prompt([
@@ -141,7 +143,8 @@ async function main() {
         platform: selectedCourse.platform,
         instructor: selectedCourse.instructor,
         modules: selectedCourse.modules,
-        url: selectedCourse.url
+        url: selectedCourse.url,
+        goal: selectedCourse.goal
       },
       transcriptContent || urlContent,
       extraContent

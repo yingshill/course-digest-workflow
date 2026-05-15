@@ -21,6 +21,7 @@ The template separates AI-generated and human-authored content explicitly so ref
 ```
 📖 Course Notebook
 ├── 🧭 Source Metadata (URL, Platform, Instructor, Difficulty, Modules, Progress)
+├── 🎯 Goal (human-authored at entry: "What do I want to be able to do after this course?")
 ├── 📝 Syllabus zone
 │   └── (auto-filled from URL scrape; manual paste fallback if login-gated)
 ├── 🌐 Course Overview (AI)
@@ -31,6 +32,7 @@ The template separates AI-generated and human-authored content explicitly so ref
 │   │   ├── 🧠 Learning expert scaffolding
 │   │   │   ├── Concept connections
 │   │   │   ├── Comprehension Qs
+│   │   │   ├── → My Answers (✍️ human fills below each Q set)
 │   │   │   └── Application prompts
 │   │   └── ✍️ Your Reflection (5-part)
 │   │       ├── 1. What surprised you?
@@ -41,6 +43,7 @@ The template separates AI-generated and human-authored content explicitly so ref
 │   └── (repeat per module)
 ├── 🔗 Connects To (AI — links to other Topic Hub entries)
 └── ✨ Course-level Reflection (✍️ Your Reflection — 5-part, cumulative)
+    └── Did this course deliver on your Goal? (explicit callback to 🎯 Goal set at entry)
 ```
 
 ## URL-first workflow

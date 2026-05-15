@@ -30,6 +30,7 @@ CLI Tool (manual trigger)
      - `Platform` (select)
      - `Instructor` (text)
      - `Modules` (number)
+     - `Goal` (text) — optional but recommended
      - `Status` (status)
 
 2. **Notion integration:**
