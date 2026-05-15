@@ -67,10 +67,10 @@ npm install
    DEBUG=false
    ```
 
-   To get `NOTION_DATABASE_ID`:
+   To get `NOTION_DATABASE_ID` (the data source ID, not the view URL ID):
    - Open your Course Digest database in Notion
-   - The URL is: `https://notion.so/workspace/{DATABASE_ID}?v=...`
-   - Copy the ID part (32-character alphanumeric string)
+   - The view URL contains a view ID, not the data source ID
+   - Use the Notion API search or check with the CLI: the data source ID is the one returned under `data_sources[].id` when retrieving the database
 
 ## Usage
 

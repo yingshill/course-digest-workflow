@@ -1,12 +1,12 @@
 const { Client } = require('@notionhq/client');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const databaseId = process.env.NOTION_DATABASE_ID;
+const dataSourceId = process.env.NOTION_DATABASE_ID;
 
 async function getPendingCourses() {
   try {
-    const response = await notion.databases.query({
-      database_id: databaseId,
+    const response = await notion.dataSources.query({
+      data_source_id: dataSourceId,
       filter: {
         property: 'Status',
         status: { does_not_equal: 'Done' }
@@ -31,7 +31,6 @@ async function getPendingCourses() {
 
 async function updateCoursePage(pageId, updates) {
   try {
-    // Update page properties (status, transcript ready)
     await notion.pages.update({
       page_id: pageId,
       properties: updates.properties || {}
