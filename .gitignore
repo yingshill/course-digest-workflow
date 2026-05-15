@@ -18,3 +18,7 @@ build/
 
 # Logs
 *.log
+
+# Artifact scratch files
+artifacts/_preview.html
+artifacts/_swatches.html
